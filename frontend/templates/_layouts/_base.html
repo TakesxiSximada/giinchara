@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%block name="head">
+    <meta charset="utf-8">
+
+    <title>
+      <%block name="title">
+        <%block name="title_main">Baast</%block>
+        <%block name="title_separator">-</%block>
+        <%block name="title_sub">Backend As A Service for Tornado</%block>
+      </%block>
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+      <%block name="externals">
+        <%include file="_externals.html"/>
+        <%block name="externals_special"></%block>
+      </%block>
+
+    </%block>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <%include file="_bannar.html"/>
+
+          <div class="nav-collapse">
+            <%include file="_navigate_right.html"/>
+            <%include file="_search_box.html"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%block name="navigation_main">
+      <%include file="_navigation_main.html"/>
+    </%block>
+
+    <%block name="content_main"></%block>
+    <%block name="footer">
+      <%include file="_footer.html"/>
+    </%block>
+
+    <%block name="after_script">
+      <%include file="_after_script.html"/>
+    </%block>
+
+  </body>
+</html>

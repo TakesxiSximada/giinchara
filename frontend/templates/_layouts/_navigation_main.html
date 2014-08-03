@@ -1,0 +1,47 @@
+<%
+   import os.path
+ %>
+<div class="subnavbar">
+  <div class="subnavbar-inner">
+    <div class="container">
+
+
+<ul class="mainnav">
+  %for navi in main_navigations:
+  <%
+     class_ = ''
+     is_dropdown = len(navi) > 1
+
+     if is_dropdown:
+         class_ += 'dropdown'
+     if navi.href and os.path.basename(navi.href) == os.path.basename(export_file):
+         class_ += ' ' + 'active'
+   %>
+  <li class="${class_}">
+    %if is_dropdown:
+      <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="${navi.icon}"></i>
+        <span>${navi.name}</span>
+        <b class="aret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        %for navi_child in navi:
+          <li><a href="${navi_child.href}">${navi_child.name}</a></li>
+        %endfor
+      </ul>
+    %else:
+      <a href="${navi.href}">
+        <i class="${navi.icon}"></i>
+        <span>${navi.name}</span>
+      </a>
+    %endif
+  </li>
+  %endfor
+</ul>
+
+
+
+
+    </div>
+  </div>
+</div>
