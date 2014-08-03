@@ -17,7 +17,7 @@ main_navigations = [
     Navi('TOP', href='/index.html', icon='icon-dashboard'),
     Navi(u'議員情報', href='/reports.html', icon='icon-list-alt'),
     Navi(u'ランク', href='/guidely.html', icon='icon-facetime-video'),
-    Navi(u'ニュース', href='/guidely.html', icon='icon-facetime-video'),
+    #Navi(u'ニュース', href='/guidely.html', icon='icon-facetime-video'),
     # Navi('Charts', href='/charts.html', icon='icon-bar-chart'),
     # Navi('Shortcodes', href='/shortcodes.html', icon='icon-code'),
     # Navi('Drops', icon='icon-long-arrow-down', children=[
@@ -70,7 +70,7 @@ def main():
                     with open(output_file, 'w+b') as fp:
                         contexts = {
                             'export_file': template_file,
-                            'title': 'Baast - Backend As A Service for Tornado',
+                            'title': u'議員ウォッチ',
                             'search_placeholder': 'search',
                             'main_navigations': main_navigations,
                             'base_color': '#00ba8b',
